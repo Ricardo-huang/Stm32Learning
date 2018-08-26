@@ -1,12 +1,12 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.10.1.12857/W32 for ARM                24/Aug/2018  16:15:33
+# IAR ELF Linker V8.10.1.12857/W32 for ARM                26/Aug/2018  10:27:25
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  E:\Stm32Learning\Practice3-EXTI\Debug\Exe\Project.out
 #    Map file     =  E:\Stm32Learning\Practice3-EXTI\Debug\List\Project.map
 #    Command line =  
-#        -f C:\Users\dell\AppData\Local\Temp\EW4A10.tmp
+#        -f C:\Users\dell\AppData\Local\Temp\EW4508.tmp
 #        (E:\Stm32Learning\Practice3-EXTI\Debug\Obj\bsp.o
 #        E:\Stm32Learning\Practice3-EXTI\Debug\Obj\KEY.o
 #        E:\Stm32Learning\Practice3-EXTI\Debug\Obj\main.o
@@ -58,7 +58,7 @@ application.
   .intvec   ro code  0x08000000  0x188  startup_stm32f40_41xxx.o [1]
                    - 0x08000188  0x188
 
-"P1":                            0x6dc
+"P1":                            0x6d8
   .text     ro code  0x08000188  0x154  system_stm32f4xx.o [1]
   .text     ro code  0x080002dc   0xd4  KEY.o [1]
   .text     ro code  0x080003b0   0x48  stm32f4xx_rcc.o [1]
@@ -71,12 +71,13 @@ application.
   .text     ro code  0x0800069e   0x12  stm32f4xx_it.o [1]
   .text     ro code  0x080006b0   0x1a  cmain.o [5]
   .text     ro code  0x080006ca    0x4  low_level_init.o [3]
-  .text     ro code  0x080006ce   0x10  main.o [1]
-  .text     ro code  0x080006de    0x4  exit.o [3]
-  .text     ro code  0x080006e4    0xa  cexit.o [5]
-  .text     ro code  0x080006f0   0x14  exit.o [6]
-  .text     ro code  0x08000704   0x10  startup_stm32f40_41xxx.o [1]
-  .text     ro code  0x08000714    0xc  cstartup_M.o [5]
+  .text     ro code  0x080006ce    0xc  main.o [1]
+  .text     ro code  0x080006da    0x4  exit.o [3]
+  .text     ro code  0x080006e0    0xa  cexit.o [5]
+  .text     ro code  0x080006ec   0x14  exit.o [6]
+  .text     ro code  0x08000700   0x10  startup_stm32f40_41xxx.o [1]
+  .text     ro code  0x08000710    0xc  cstartup_M.o [5]
+  .text     ro code  0x0800071c    0x4  startup_stm32f40_41xxx.o [1]
   .text     ro code  0x08000720    0x4  startup_stm32f40_41xxx.o [1]
   .text     ro code  0x08000724    0x4  startup_stm32f40_41xxx.o [1]
   .text     ro code  0x08000728    0x4  startup_stm32f40_41xxx.o [1]
@@ -157,8 +158,7 @@ application.
   .text     ro code  0x08000854    0x4  startup_stm32f40_41xxx.o [1]
   .text     ro code  0x08000858    0x4  startup_stm32f40_41xxx.o [1]
   .text     ro code  0x0800085c    0x4  startup_stm32f40_41xxx.o [1]
-  .text     ro code  0x08000860    0x4  startup_stm32f40_41xxx.o [1]
-                   - 0x08000864  0x6dc
+                   - 0x08000860  0x6d8
 
 "P2":                            0x400
   CSTACK             0x20000000  0x400  <Block>
@@ -176,7 +176,7 @@ application.
 E:\Stm32Learning\Practice3-EXTI\Debug\Obj: [1]
     KEY.o                         212
     bsp.o                          44
-    main.o                         16
+    main.o                         12
     misc.o                        136
     startup_stm32f40_41xxx.o      732
     stm32f4xx_exti.o              192
@@ -186,7 +186,7 @@ E:\Stm32Learning\Practice3-EXTI\Debug\Obj: [1]
     stm32f4xx_syscfg.o             92
     system_stm32f4xx.o            340
     ------------------------------------------
-    Total:                      2 034
+    Total:                      2 030
 
 command line: [2]
     ------------------------------------------
@@ -218,7 +218,7 @@ shb_l.a: [6]
     Gaps                            4
     Linker created                       1 024
 ----------------------------------------------
-    Grand Total:                2 148    1 024
+    Grand Total:                2 144    1 024
 
 
 *******************************************************************************
@@ -233,7 +233,7 @@ BusFault_Handler        0x080006a5   0x2  Code  Gb  stm32f4xx_it.o [1]
 CSTACK$$Base            0x20000000         --   Gb  - Linker created -
 CSTACK$$Limit           0x20000400         --   Gb  - Linker created -
 DebugMon_Handler        0x080006ab   0x2  Code  Gb  stm32f4xx_it.o [1]
-EXTI9_5_IRQHandler      0x08000385  0x24  Code  Gb  KEY.o [1]
+EXTI2_IRQHandler        0x08000385  0x24  Code  Gb  KEY.o [1]
 EXTI_ClearITPendingBit  0x080005ab   0x6  Code  Gb  stm32f4xx_exti.o [1]
 EXTI_GetITStatus        0x08000591  0x1a  Code  Gb  stm32f4xx_exti.o [1]
 EXTI_Init               0x08000509  0x88  Code  Gb  stm32f4xx_exti.o [1]
@@ -258,19 +258,19 @@ SysTick_Handler         0x080006af   0x2  Code  Gb  stm32f4xx_it.o [1]
 SystemInit              0x08000189  0x52  Code  Gb  system_stm32f4xx.o [1]
 UsageFault_Handler      0x080006a7   0x2  Code  Gb  stm32f4xx_it.o [1]
 __cmain                 0x080006b1        Code  Gb  cmain.o [5]
-__exit                  0x080006f1  0x14  Code  Gb  exit.o [6]
+__exit                  0x080006ed  0x14  Code  Gb  exit.o [6]
 __iar_init_vfp          0x0800067d        Code  Gb  fpinit_M.o [4]
-__iar_program_start     0x08000715        Code  Gb  cstartup_M.o [5]
+__iar_program_start     0x08000711        Code  Gb  cstartup_M.o [5]
 __iar_systems$$module {Abs}
                         0x00000001        Data  Gb  command line/config [2]
 __low_level_init        0x080006cb   0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x08000000        Data  Gb  startup_stm32f40_41xxx.o [1]
 _call_main              0x080006bd        Code  Gb  cmain.o [5]
-_exit                   0x080006e5        Code  Gb  cexit.o [5]
+_exit                   0x080006e1        Code  Gb  cexit.o [5]
 _main                   0x080006c7        Code  Gb  cmain.o [5]
 delay_ms                0x08000661  0x1c  Code  Gb  bsp.o [1]
-exit                    0x080006df   0x4  Code  Gb  exit.o [3]
-main                    0x080006cf  0x10  Code  Gb  main.o [1]
+exit                    0x080006db   0x4  Code  Gb  exit.o [3]
+main                    0x080006cf   0xc  Code  Gb  main.o [1]
 
 
 [1] = E:\Stm32Learning\Practice3-EXTI\Debug\Obj
@@ -280,7 +280,7 @@ main                    0x080006cf  0x10  Code  Gb  main.o [1]
 [5] = rt7M_tl.a
 [6] = shb_l.a
 
-  2 148 bytes of readonly  code memory
+  2 144 bytes of readonly  code memory
   1 024 bytes of readwrite data memory
 
 Errors: none

@@ -19,8 +19,7 @@ void KEY_Init(void)
 	  NVIC_InitTypeDef NVIC_InitStructure;
 	  
 	  LED_Enable
-      KEY_Enable
-	  SYSCFG_Enable
+      
 	  
 	  //配置按键的IO口
 	  GPIO_InitStructure.GPIO_Pin=PIN_KEY;
@@ -30,6 +29,8 @@ void KEY_Init(void)
 	  GPIO_Init(GPIO_KEY,&GPIO_InitStructure);
 	    
 	  //配置LED的IO口
+      KEY_Enable
+	  SYSCFG_Enable
 	  GPIO_InitStructure.GPIO_Pin=PIN_LED;
 	  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_OUT;
 	  GPIO_InitStructure.GPIO_OType=GPIO_OType_PP;
@@ -41,7 +42,7 @@ void KEY_Init(void)
 	  EXTILine_Config   //将IO口连接上中断线
 	  EXTI_InitStructure.EXTI_Line=EXTILine;                
 	  EXTI_InitStructure.EXTI_Mode=EXTI_Mode_Interrupt;      // 中断事件
-	  EXTI_InitStructure.EXTI_Trigger=EXTI_Trigger_Falling;  // 下降沿触发
+	  EXTI_InitStructure.EXTI_Trigger=EXTI_Trigger_Rising;  // 下降沿触发
 	  EXTI_InitStructure.EXTI_LineCmd=ENABLE;                // 中断线使能
 	  EXTI_Init(&EXTI_InitStructure);                        // 配置
 	  
