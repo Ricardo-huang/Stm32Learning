@@ -16,10 +16,10 @@
 #define PORT_LED0						GPIOF    
 #define PIN_LED0						GPIO_Pin_9
 
-#define PORT_LED1						GPIOF    
-#define PIN_LED1						GPIO_Pin_10
+#define PORT_LED1						GPIOE   
+#define PIN_LED1						GPIO_Pin_3
 
-#define LED_PORT_ENABLE				    {RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF,ENABLE);}
+#define LED_PORT_ENABLE				    {RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE,ENABLE);}
 
 
 /*

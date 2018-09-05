@@ -39,19 +39,19 @@ void TIM_Init(void)
 
 	TIM_ENABLE  ///使能定时器时钟
 	
-    TIM_TimeBaseInitStructure.TIM_Period = arr;     //自动重装载值
+        TIM_TimeBaseInitStructure.TIM_Period = arr;     //自动重装载值
 	TIM_TimeBaseInitStructure.TIM_Prescaler= psc;   //定时器分频
 	TIM_TimeBaseInitStructure.TIM_CounterMode=TIM_CounterMode_Up; //向上计数模式
 	TIM_TimeBaseInitStructure.TIM_ClockDivision=TIM_CKD_DIV1; 
 	TIM_TimeBaseInit(tim,&TIM_TimeBaseInitStructure);//初始化定时器
 		
-    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1; //选择定时器模式:TIM脉冲宽度调制模式1
+        TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1; //选择定时器模式:TIM脉冲宽度调制模式1
  	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; //比较输出使能
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low; //输出极性:TIM输出比较极性低
 	TIM_OC1Init(tim, &TIM_OCInitStructure);  //根据指定的参数初始化外设TIM OC1
 
 	TIM_OC1PreloadConfig(tim, TIM_OCPreload_Enable);  //使能TIM在CCR1上的预装载寄存器
-    TIM_ARRPreloadConfig(tim,ENABLE);//ARPE使能 
+        TIM_ARRPreloadConfig(tim,ENABLE);//ARPE使能 
 	
 	TIM_Cmd(tim,ENABLE); //使能定时器
 }

@@ -47,11 +47,6 @@ int main(void)
 		
         while(1)
         {
-			delay_ms(10);
-			if(dir)led0pwmval++;
-			else led0pwmval--;
-			if(led0pwmval>300) dir=0;
-			if(led0pwmval==0)  dir=1;
 			TIM_SetCompare1(tim,led0pwmval);
         }
 		
